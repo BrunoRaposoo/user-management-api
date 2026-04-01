@@ -42,6 +42,12 @@ src/
 - Entidades carregadas automaticamente (`autoLoadEntities: true`)
 - Entidade: User (src/user/user.entity.ts)
 
+### Validação e Criptografia
+- **class-validator**: Validação de DTOs via decorators
+- **bcrypt**: Hash de senhas com salt rounds = 10
+- **ValidationPipe**: Global com `whitelist`, `forbidNonWhitelisted`, `transform`
+- NUNCA exponha senhas em respostas da API
+
 ### Padrões de Código
 - Injeção de dependências em todos os serviços
 - DTOs para validação de entrada
