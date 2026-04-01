@@ -36,6 +36,12 @@ src/
 - **TypeORM**: Configuração assíncrona usando `ConfigService`
 - **Prefixo da API**: `api/v1`
 
+### TypeORM
+- `synchronize: true` - **APENAS PARA DESENVOLVIMENTO**
+- Em **produção**: usar migrations (desabilitar synchronize)
+- Entidades carregadas automaticamente (`autoLoadEntities: true`)
+- Entidade: User (src/user/user.entity.ts)
+
 ### Padrões de Código
 - Injeção de dependências em todos os serviços
 - DTOs para validação de entrada
