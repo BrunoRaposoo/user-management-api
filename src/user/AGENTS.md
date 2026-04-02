@@ -9,12 +9,18 @@ O módulo `user` é responsável por todas as operações relacionadas ao gerenc
 ### Entidade
 
 - **User Entity**: Define a estrutura da tabela de usuários no banco de dados MySQL
-  - `id`: Identificador único (UUID ou auto-increment)
-  - `email`: Email único do usuário
-  - `name`: Nome do usuário
+  - `id`: Identificador único (auto-increment)
+  - `name`: Nome completo do usuário (até 100 caracteres)
+  - `username`: Nome de usuário único (até 50 caracteres) - usado para login
+  - `email`: Email único do usuário (até 100 caracteres)
   - `password`: Senha hashada (nunca armazenar em texto claro)
-  - `createdAt`: Data de criação
-  - `updatedAt`: Data de atualização
+  - `createdAt`: Data de criação (gerado automaticamente pelo TypeORM)
+  - `updatedAt`: Data de atualização (gerado automaticamente pelo TypeORM)
+
+#### Regras de Negócio
+- `username` e `email` devem ser únicos no banco
+- `password` deve ser hashada com bcrypt antes de armazenar
+- Não exponha o campo `password` nas respostas da API
 
 ### DTOs (Data Transfer Objects)
 
